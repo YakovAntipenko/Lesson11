@@ -1,0 +1,17 @@
+---
+- hosts: SQL
+  become: yes
+
+  tasks:
+
+
+    - name: Pull an MySQL image
+      docker_image:
+        name: mysql
+        source: pull 
+
+    - name: Create MySQL container
+      docker_container: 
+        name: MyfirstSQL
+        image: mysql
+        command: 
